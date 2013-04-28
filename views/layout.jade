@@ -1,0 +1,34 @@
+doctype 5
+html
+  head
+    title My App
+
+    meta(name='viewport', content="width=device-width, initial-scale=1.0")
+
+    link(rel='stylesheet', href='styles/css/ie10mobile.css' + cachebust)
+    link(rel='stylesheet', href='styles/vendor/bootstrap/css/bootstrap.css' + cachebust)
+    link(rel='stylesheet', href='styles/vendor/bootstrap/css/bootstrap-responsive.css' + cachebust)
+    link(rel='stylesheet', href='styles/vendor/font-awesome/css/font-awesome.css' + cachebust)
+    link(rel='stylesheet', href='styles/css/durandal.css' + cachebust)
+    link(rel='stylesheet', href='styles/vendor/toastr/toastr.css' + cachebust)
+    link(rel='stylesheet', href='styles/css/app.css' + cachebust)
+
+    if reload
+      script(src='socket.io/socket.io.js')
+      script(src='javascripts/reload-client.js')
+
+    if optimize
+      script(src='javascripts/vendor/jquery/jquery.min.js')
+      script(src='javascripts/vendor/knockout/knockout.min.js')
+      script(src='javascripts/vendor/sammy/sammy.min.js')
+      script(src='javascripts/vendor/lodash/lodash.min.js')
+      script(src='javascripts/main-built.js')
+    else
+      script(src='javascripts/vendor/jquery/jquery.js')
+      script(src='javascripts/vendor/knockout/knockout.js')
+      script(src='javascripts/vendor/sammy/sammy.js')
+      script(src='javascripts/vendor/lodash/lodash.js')
+      script(src='javascripts/vendor/amd/require.js', data-main='javascripts/main.js')
+
+  body
+    block content

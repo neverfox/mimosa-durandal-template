@@ -1,0 +1,9 @@
+nav.navbar.navbar-fixed-top
+  .navbar-inner
+    a.brand(href='/')
+      span.title My App
+    .btn-group(data-bind='foreach: router.visibleRoutes')
+        a.btn.btn-info(data-bind='css: { active: isActive }, attr: { href: hash }, text: name', href='#')
+    .loader.pull-right(data-bind='css: { active: router.isNavigating }')
+      .progress.progress-striped.active.page-progress-bar
+        .bar(style='width: 100px;')
